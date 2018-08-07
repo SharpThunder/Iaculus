@@ -1,5 +1,6 @@
 from django.conf.urls import url
 
+
 from forum.views import like, HomepageView, CategoryView, TopicView, \
     ContactFormView, \
     TopicCreateView, RegistrationView

@@ -68,7 +68,7 @@ class Topic(models.Model):
     by moderators, users can not post message under this topic.
     """
     title = models.CharField(max_length=200)
-    category = models.ForeignKey(Category, related_name="topics")
+    category = models.ForeignKey(Category, related_name="topics", on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     closed = models.BooleanField(blank=True, default=False)
@@ -85,12 +85,12 @@ class Post(models.Model):
     """
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    topic = models.ForeignKey(Topic, related_name="posts")
+    topic = models.ForeignKey(Topic, related_name="posts", on_delete=models.CASCADE)
     body = models.TextField()
     score = models.SmallIntegerField(default=0)
     hidden = models.BooleanField(default=False)
     slug = models.SlugField(blank=True)
-    user = models.ForeignKey("User")
+    user = models.ForeignKey("User", on_delete=models.CASCADE)
 
     def __str__(self):
         return "#{id}".format(id=self.id)
