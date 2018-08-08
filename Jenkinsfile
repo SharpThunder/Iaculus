@@ -12,7 +12,7 @@ node {
                            
             
         stage 'Deploy'
-	    find . -name "*.sh" -exec chmod +x {} \;
+	    sh 'find . -name "*.sh" -exec chmod +x {} \;'
 
             sh './deploy_prod.sh'
 
