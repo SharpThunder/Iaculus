@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ssh 35.237.233.134 <<EOF
+ssh root@35.237.233.134 <<EOF
   cd Iaculus
   git pull
   source /home/sharpthunder/Iaculus/.venv/bin/activate
