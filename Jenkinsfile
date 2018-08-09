@@ -13,7 +13,7 @@ node {
             
         stage 'Deploy'
 	    sh 'chmod 777 ./deploy_prod.sh'
-
+	    sh 'sudo su'
             sh './deploy_prod.sh'
 
         
